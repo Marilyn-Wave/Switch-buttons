@@ -9,8 +9,8 @@
 }
 
 .toggle label {
-    background-color: black;
-    border: 2px solid black;
+    background-color: #000000;
+    border: 2px solid #000000;
     border-radius: 50px;
     cursor: pointer;
     display: flex;
@@ -22,33 +22,131 @@
 }
 
 .toggle label::after {
-    background-color: white;
+    background-color: #fff;
     border-radius: 50%;
     cursor: pointer;
     display: inline-block;
-    position: absolute;
+    position: relative;
     left: 5px;
     top: 4px;
     transition: all 0.4s ease-in-out;
     width: 42px;
     height: 42px;
     content: attr(data-on);
+    animation: myAnim1 1s ease 0s 1 normal forwards;
 }
 
 .toggle input[type='checkbox']:checked ~ label {
-    background-color: white;
-    border-color: white;
+    background-color: #ffffff;
+    border-color: #ffffff;
 }
 
 .toggle input[type='checkbox']:checked ~ label::after {
-    background-color: black;
-    transform: translateX(50px);
+    background-color: #000000;
+    border-color: #000000;
+    animation: myAnim 1s ease 0s 1 normal forwards;
+
 }
 
 body {
-    background-color: #f5f7fa;
+    background-color: #ffffff;
 }
 
 body.dark-theme {
-    background-color: #333;
+    background-color: #000000;
+}
+
+
+@keyframes myAnim {
+    0% {
+        animation-timing-function: ease-in;
+        opacity: 1;
+        transform: translateX(-48px);
+    }
+
+    24% {
+        opacity: 1;
+    }
+
+    40% {
+        animation-timing-function: ease-in;
+        transform: translateX(-26px);
+    }
+
+    65% {
+        animation-timing-function: ease-in;
+        transform: translateX(-13px);
+    }
+
+    82% {
+        animation-timing-function: ease-in;
+        transform: translateX(-6.5px);
+    }
+
+    93% {
+        animation-timing-function: ease-in;
+        transform: translateX(-4px);
+    }
+
+    25%,
+    55%,
+    75%,
+    87%,
+    98% {
+        animation-timing-function: ease-out;
+        transform: translateX(0px);
+    }
+
+    100% {
+        animation-timing-function: ease-out;
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+@keyframes myAnim1 {
+    0% {
+        animation-timing-function: ease-in;
+        opacity: 1;
+        transform: translateX(48px);
+    }
+
+    24% {
+        opacity: 1;
+    }
+
+    40% {
+        animation-timing-function: ease-in;
+        transform: translateX(26px);
+    }
+
+    65% {
+        animation-timing-function: ease-in;
+        transform: translateX(13px);
+    }
+
+    82% {
+        animation-timing-function: ease-in;
+        transform: translateX(6.5px);
+    }
+
+    93% {
+        animation-timing-function: ease-in;
+        transform: translateX(4px);
+    }
+
+    25%,
+    55%,
+    75%,
+    87%,
+    98% {
+        animation-timing-function: ease-out;
+        transform: translateX(0px);
+    }
+
+    100% {
+        animation-timing-function: ease-out;
+        opacity: 1;
+        transform: translateX(0px);
+    }
 }
